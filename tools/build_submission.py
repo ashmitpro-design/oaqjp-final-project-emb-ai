@@ -3,7 +3,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = "https://github.com/ashmitpro-design/emotion-detector/blob/main/"
+BASE = "https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/"
 FIELDS = (
     ("README URL", "README.md", "url"),
     ("Emotion detection application code", "evidence/2a_emotion_detection.txt", "python"),
@@ -31,7 +31,7 @@ def main():
         "",
         "Numbering follows the supplied activity/evidence order. No separate question wording was supplied.",
         "",
-        "Repository: https://github.com/ashmitpro-design/emotion-detector",
+        "Repository: https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai",
         "",
         "**Live-service limitation:** Watson could not be reached (ConnectTimeout). "
         "The five live tests failed; 16 offline tests passed. HTTP fixtures in offline "

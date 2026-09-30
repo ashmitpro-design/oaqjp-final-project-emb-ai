@@ -2,7 +2,7 @@
 
 Numbering follows the supplied activity/evidence order. No separate question wording was supplied.
 
-Repository: https://github.com/ashmitpro-design/emotion-detector
+Repository: https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai
 
 **Live-service limitation:** Watson could not be reached (ConnectTimeout). The five live tests failed; 16 offline tests passed. HTTP fixtures in offline tests are explicitly synthetic. The deployment screenshot shows the genuine unavailable-service message, not a successful prediction.
 
@@ -10,13 +10,13 @@ All code excerpts are the completed implementation captured during verification;
 
 ## Question 1: README URL
 
-[README.md](https://github.com/ashmitpro-design/emotion-detector/blob/main/README.md)
+[README.md](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/README.md)
 
-https://github.com/ashmitpro-design/emotion-detector/blob/main/README.md
+https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/README.md
 
 ## Question 2: Emotion detection application code
 
-[evidence/2a_emotion_detection.txt](https://github.com/ashmitpro-design/emotion-detector/blob/main/evidence/2a_emotion_detection.txt)
+[evidence/2a_emotion_detection.txt](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/2a_emotion_detection.txt)
 
 ```python
 """Analyze text with the IBM Skills Network Watson NLP REST service."""
@@ -84,7 +84,7 @@ def emotion_detector(text_to_analyze):
 
 ## Question 3: Application import and real execution
 
-[evidence/2b_application_creation.txt](https://github.com/ashmitpro-design/emotion-detector/blob/main/evidence/2b_application_creation.txt)
+[evidence/2b_application_creation.txt](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/2b_application_creation.txt)
 
 ```text
 $ python -c from EmotionDetection.emotion_detection import emotion_detector; print('Application module import: PASS'); print('Live call: I am so happy I am doing this.'); print(emotion_detector('I am so happy I am doing this.'))
@@ -98,7 +98,7 @@ Exit code: 0
 
 ## Question 4: Formatted emotion detection code
 
-[evidence/3a_output_formatting.txt](https://github.com/ashmitpro-design/emotion-detector/blob/main/evidence/3a_output_formatting.txt)
+[evidence/3a_output_formatting.txt](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/3a_output_formatting.txt)
 
 ```python
 """Analyze text with the IBM Skills Network Watson NLP REST service."""
@@ -166,7 +166,7 @@ def emotion_detector(text_to_analyze):
 
 ## Question 5: Actual formatted output
 
-[evidence/3b_formatted_output_test.txt](https://github.com/ashmitpro-design/emotion-detector/blob/main/evidence/3b_formatted_output_test.txt)
+[evidence/3b_formatted_output_test.txt](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/3b_formatted_output_test.txt)
 
 ```text
 $ python -c from EmotionDetection.emotion_detection import emotion_detector; print('Application module import: PASS'); print('Live call: I am so happy I am doing this.'); print(emotion_detector('I am so happy I am doing this.'))
@@ -180,13 +180,13 @@ Exit code: 0
 
 ## Question 6: Package __init__.py URL
 
-[EmotionDetection/__init__.py](https://github.com/ashmitpro-design/emotion-detector/blob/main/EmotionDetection/__init__.py)
+[EmotionDetection/__init__.py](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/EmotionDetection/__init__.py)
 
-https://github.com/ashmitpro-design/emotion-detector/blob/main/EmotionDetection/__init__.py
+https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/EmotionDetection/__init__.py
 
 ## Question 7: Package validation output
 
-[evidence/4b_packaging_test.txt](https://github.com/ashmitpro-design/emotion-detector/blob/main/evidence/4b_packaging_test.txt)
+[evidence/4b_packaging_test.txt](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/4b_packaging_test.txt)
 
 ```text
 $ python -c from EmotionDetection import emotion_detector; import EmotionDetection.emotion_detection; print('Package and module imports: PASS'); print('Blank input:', emotion_detector(''))
@@ -198,7 +198,7 @@ Exit code: 0
 
 ## Question 8: Complete unit test code
 
-[evidence/5a_unit_testing.txt](https://github.com/ashmitpro-design/emotion-detector/blob/main/evidence/5a_unit_testing.txt)
+[evidence/5a_unit_testing.txt](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/5a_unit_testing.txt)
 
 ```python
 """Offline contract tests plus opt-in, unmocked Watson integration tests.
@@ -405,7 +405,7 @@ if __name__ == "__main__":
 
 ## Question 9: Actual unit test results
 
-[evidence/5b_unit_testing_result.txt](https://github.com/ashmitpro-design/emotion-detector/blob/main/evidence/5b_unit_testing_result.txt)
+[evidence/5b_unit_testing_result.txt](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/5b_unit_testing_result.txt)
 
 ```text
 $ python -m unittest -v test_emotion_detection
@@ -453,7 +453,7 @@ Exit code: 0
 
 ## Question 10: Complete Flask server code
 
-[evidence/6a_server.txt](https://github.com/ashmitpro-design/emotion-detector/blob/main/evidence/6a_server.txt)
+[evidence/6a_server.txt](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/6a_server.txt)
 
 ```python
 """Serve the Emotion Detector interface and the course's analysis route."""
@@ -502,7 +502,7 @@ if __name__ == "__main__":
 
 ## Question 11: Deployment screenshot
 
-[evidence/6b_deployment_test.png](https://github.com/ashmitpro-design/emotion-detector/blob/main/evidence/6b_deployment_test.png)
+[evidence/6b_deployment_test.png](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/6b_deployment_test.png)
 
 ![Deployment screenshot](6b_deployment_test.png)
 
@@ -510,7 +510,7 @@ This is real Flask deployment evidence; live emotion inference remains blocked.
 
 ## Question 12: HTTP 400 handling code
 
-[evidence/7a_error_handling_function.txt](https://github.com/ashmitpro-design/emotion-detector/blob/main/evidence/7a_error_handling_function.txt)
+[evidence/7a_error_handling_function.txt](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/7a_error_handling_function.txt)
 
 ```python
 """Analyze text with the IBM Skills Network Watson NLP REST service."""
@@ -578,7 +578,7 @@ def emotion_detector(text_to_analyze):
 
 ## Question 13: Flask blank-input handling code
 
-[evidence/7b_error_handling_server.txt](https://github.com/ashmitpro-design/emotion-detector/blob/main/evidence/7b_error_handling_server.txt)
+[evidence/7b_error_handling_server.txt](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/7b_error_handling_server.txt)
 
 ```python
 """Serve the Emotion Detector interface and the course's analysis route."""
@@ -627,13 +627,13 @@ if __name__ == "__main__":
 
 ## Question 14: Blank-input screenshot
 
-[evidence/7c_error_handling_interface.png](https://github.com/ashmitpro-design/emotion-detector/blob/main/evidence/7c_error_handling_interface.png)
+[evidence/7c_error_handling_interface.png](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/7c_error_handling_interface.png)
 
 ![Blank-input screenshot](7c_error_handling_interface.png)
 
 ## Question 15: Final server code for static analysis
 
-[evidence/8a_server_modified.txt](https://github.com/ashmitpro-design/emotion-detector/blob/main/evidence/8a_server_modified.txt)
+[evidence/8a_server_modified.txt](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/8a_server_modified.txt)
 
 ```python
 """Serve the Emotion Detector interface and the course's analysis route."""
@@ -682,7 +682,7 @@ if __name__ == "__main__":
 
 ## Question 16: Actual Pylint command and result
 
-[evidence/8b_static_code_analysis.txt](https://github.com/ashmitpro-design/emotion-detector/blob/main/evidence/8b_static_code_analysis.txt)
+[evidence/8b_static_code_analysis.txt](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/8b_static_code_analysis.txt)
 
 ```text
 $ python -m pylint server.py
@@ -696,8 +696,8 @@ Exit code: 0
 
 ## Additional live verification
 
-[Actual network probe](https://github.com/ashmitpro-design/emotion-detector/blob/main/evidence/watson_live_probe.txt)
-[Five real integration-test failures](https://github.com/ashmitpro-design/emotion-detector/blob/main/evidence/5c_live_unit_testing_result.txt)
-[Real browser verification](https://github.com/ashmitpro-design/emotion-detector/blob/main/evidence/6c_browser_verification.txt)
+[Actual network probe](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/watson_live_probe.txt)
+[Five real integration-test failures](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/5c_live_unit_testing_result.txt)
+[Real browser verification](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/6c_browser_verification.txt)
 
 To finish live verification, run the project in your course Skills Network lab or a network with access to the course service. Run the opt-in live tests and recapture the deployment screenshot after receiving a genuine prediction. See README.md for exact commands.

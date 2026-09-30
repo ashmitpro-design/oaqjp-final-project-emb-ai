@@ -1,6 +1,6 @@
 # Emotion Detector
 
-[Public repository](https://github.com/ashmitpro-design/emotion-detector)
+[Public repository](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai)
 
 An IBM Coursera-style final project built from scratch with Python, Flask, and
 the Watson NLP EmotionPredict REST service. It returns anger, disgust, fear,
@@ -198,5 +198,5 @@ or history, and is published to a separate repository. Use the explicitly
 named Emotion Detector remote for subsequent pushes.
 
 ```sh
-git push emotion-detector HEAD:main
+git push coursera HEAD:main
 ```
