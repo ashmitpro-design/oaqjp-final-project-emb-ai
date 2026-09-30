@@ -120,7 +120,7 @@ The web page and Flask route validate blank input before calling the detector.
 
 `GET /emotionDetector?textToAnalyze=...` returns the course-style readable
 summary as `text/plain`. Missing or whitespace input returns HTTP 400 with
-`Invalid text! Please try again.` A nonblank request with unavailable results
+`Invalid input! Try again.` A nonblank request with unavailable results
 returns HTTP 503 with a service-unavailable message. Text is rendered using
 `textContent`, so user input is not interpreted as HTML.
 

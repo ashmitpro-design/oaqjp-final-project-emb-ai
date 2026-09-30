@@ -344,7 +344,7 @@ class FlaskTests(unittest.TestCase):
         for query in ({}, {"textToAnalyze": ""}, {"textToAnalyze": " \t\n"}):
             response = self.client.get("/emotionDetector", query_string=query)
             self.assertEqual(response.status_code, 400)
-            self.assertEqual(response.text, "Invalid text! Please try again.")
+            self.assertEqual(response.text, "Invalid input! Try again.")
         detector.assert_not_called()
 
     @patch("server.emotion_detector")
@@ -444,7 +444,7 @@ test_live_joy (test_emotion_detection.WatsonLiveTests.test_live_joy) ... skipped
 test_live_sadness (test_emotion_detection.WatsonLiveTests.test_live_sadness) ... skipped 'Requires live Watson service; set RUN_WATSON_LIVE_TESTS=1'
 
 ----------------------------------------------------------------------
-Ran 21 tests in 0.068s
+Ran 21 tests in 0.086s
 
 OK (skipped=5)
 
@@ -463,7 +463,7 @@ from flask import Flask, Response, render_template, request
 from EmotionDetection import emotion_detector
 
 app = Flask(__name__)
-INVALID_TEXT = "Invalid text! Please try again."
+INVALID_TEXT = "Invalid input! Try again."
 
 
 @app.get("/")
@@ -588,7 +588,7 @@ from flask import Flask, Response, render_template, request
 from EmotionDetection import emotion_detector
 
 app = Flask(__name__)
-INVALID_TEXT = "Invalid text! Please try again."
+INVALID_TEXT = "Invalid input! Try again."
 
 
 @app.get("/")
@@ -643,7 +643,7 @@ from flask import Flask, Response, render_template, request
 from EmotionDetection import emotion_detector
 
 app = Flask(__name__)
-INVALID_TEXT = "Invalid text! Please try again."
+INVALID_TEXT = "Invalid input! Try again."
 
 
 @app.get("/")

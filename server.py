@@ -5,7 +5,7 @@ from flask import Flask, Response, render_template, request
 from EmotionDetection import emotion_detector
 
 app = Flask(__name__)
-INVALID_TEXT = "Invalid text! Please try again."
+INVALID_TEXT = "Invalid input! Try again."
 
 
 @app.get("/")

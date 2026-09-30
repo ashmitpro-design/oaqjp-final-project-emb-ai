@@ -13,7 +13,7 @@ form.addEventListener("submit", async (event) => {
   input.removeAttribute("aria-invalid");
   submitted.hidden = true;
   if (!text.trim()) {
-    output.textContent = "Invalid text! Please try again.";
+    output.textContent = "Invalid input! Try again.";
     output.classList.add("error");
     input.setAttribute("aria-invalid", "true");
     input.focus();

@@ -141,7 +141,7 @@ class FlaskTests(unittest.TestCase):
         for query in ({}, {"textToAnalyze": ""}, {"textToAnalyze": " \t\n"}):
             response = self.client.get("/emotionDetector", query_string=query)
             self.assertEqual(response.status_code, 400)
-            self.assertEqual(response.text, "Invalid text! Please try again.")
+            self.assertEqual(response.text, "Invalid input! Try again.")
         detector.assert_not_called()
 
     @patch("server.emotion_detector")

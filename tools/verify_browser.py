@@ -64,17 +64,22 @@ def main():
                 page.get_by_label("Your text", exact=True).fill(blank)
                 page.get_by_role("button", name="Analyze emotions").click()
                 expect(page.locator("#system_response")).to_have_text(
-                    "Invalid text! Please try again.")
+                    "Invalid input! Try again.")
                 expect(page.locator("#textToAnalyze")).to_have_attribute("aria-invalid", "true")
                 assert len(calls) == count_before
             page.get_by_label("Your text", exact=True).fill("")
+            page.get_by_role("button", name="Analyze emotions").click()
+            expect(page.locator("#textToAnalyze")).to_have_value("")
+            expect(page.locator("#system_response")).to_have_text("Invalid input! Try again.")
+            assert page.locator("#textToAnalyze").get_attribute("placeholder") is None
+            assert len(calls) == count_before
             page.screenshot(path=str(ROOT / "evidence" / "7c_error_handling_interface.png"),
                             full_page=True)
             lines.append("Empty and whitespace submission: PASS; no additional analysis requests")
             lines.append("Saved evidence/7c_error_handling_interface.png")
             blank_response = page.request.get("http://127.0.0.1:5000/emotionDetector?textToAnalyze=%20")
             assert blank_response.status == 400
-            assert blank_response.text() == "Invalid text! Please try again."
+            assert blank_response.text() == "Invalid input! Try again."
             lines.append("Direct blank route: HTTP 400; expected validation message: PASS")
 
             page.set_viewport_size({"width": 390, "height": 844})
