@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Emotion Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='mywebscript.js') }}" defer></script>
+  </head>
+  <body>
+    <main>
+      <header><span class="mark" aria-hidden="true">e.</span><span>EMOTION DETECTOR</span><span class="tag">IBM Watson NLP</span></header>
+      <section class="intro">
+        <p class="eyebrow">A CLOSER LOOK AT LANGUAGE</p>
+        <h1>What do your words express?</h1>
+        <p>Explore anger, disgust, fear, joy, and sadness in a piece of text.</p>
+      </section>
+      <section class="workspace" aria-label="Emotion analysis">
+        <form id="emotion-form" novalidate>
+          <label for="textToAnalyze">Your text</label>
+          <p id="input-help">Enter an English sentence or a short paragraph.</p>
+          <textarea id="textToAnalyze" name="textToAnalyze" rows="6" aria-describedby="input-help" placeholder="I am so happy I am doing this."></textarea>
+          <button id="analyze-button" type="submit">Analyze emotions <span aria-hidden="true">→</span></button>
+        </form>
+        <section class="results" aria-labelledby="result-title">
+          <p class="eyebrow">THE ANALYSIS</p>
+          <h2 id="result-title">Emotion results</h2>
+          <p id="submitted-text" hidden></p>
+          <div id="system_response" role="status" aria-live="polite">Your emotion scores and dominant emotion will appear here.</div>
+        </section>
+      </section>
+      <footer>Five emotions. One new perspective.<span>Powered by the Watson NLP emotion service</span></footer>
+    </main>
+  </body>
+</html>

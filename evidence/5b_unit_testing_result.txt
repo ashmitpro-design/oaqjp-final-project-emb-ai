@@ -1,0 +1,41 @@
+$ python -m unittest -v test_emotion_detection
+test_anger_sample_with_mocked_service (test_emotion_detection.EmotionDetectorTests.test_anger_sample_with_mocked_service) ... ok
+test_blank_and_non_string_input_never_call_service (test_emotion_detection.EmotionDetectorTests.test_blank_and_non_string_input_never_call_service) ... ok
+test_disgust_sample_with_mocked_service (test_emotion_detection.EmotionDetectorTests.test_disgust_sample_with_mocked_service) ... ok
+test_fear_sample_with_mocked_service (test_emotion_detection.EmotionDetectorTests.test_fear_sample_with_mocked_service) ... ok
+test_http_400_returns_all_none_without_parsing_body (test_emotion_detection.EmotionDetectorTests.test_http_400_returns_all_none_without_parsing_body) ... ok
+test_invalid_scores (test_emotion_detection.EmotionDetectorTests.test_invalid_scores) ... ok
+test_joy_sample_with_mocked_service (test_emotion_detection.EmotionDetectorTests.test_joy_sample_with_mocked_service) ... ok
+test_malformed_response (test_emotion_detection.EmotionDetectorTests.test_malformed_response) ... Watson emotion service is unavailable or returned invalid data
+Watson emotion service is unavailable or returned invalid data
+Watson emotion service is unavailable or returned invalid data
+Watson emotion service is unavailable or returned invalid data
+Watson emotion service is unavailable or returned invalid data
+ok
+test_network_failures (test_emotion_detection.EmotionDetectorTests.test_network_failures) ... Watson emotion service is unavailable or returned invalid data
+Watson emotion service is unavailable or returned invalid data
+ok
+test_sadness_sample_with_mocked_service (test_emotion_detection.EmotionDetectorTests.test_sadness_sample_with_mocked_service) ... ok
+test_tie_has_deterministic_result (test_emotion_detection.EmotionDetectorTests.test_tie_has_deterministic_result) ... ok
+test_unsuccessful_statuses (test_emotion_detection.EmotionDetectorTests.test_unsuccessful_statuses) ... Watson emotion service returned HTTP 401
+Watson emotion service returned HTTP 403
+Watson emotion service returned HTTP 429
+Watson emotion service returned HTTP 500
+Watson emotion service returned HTTP 503
+ok
+test_blank_input_does_not_call_detector (test_emotion_detection.FlaskTests.test_blank_input_does_not_call_detector) ... ok
+test_formatted_success_with_mocked_detector (test_emotion_detection.FlaskTests.test_formatted_success_with_mocked_detector) ... ok
+test_home_and_assets (test_emotion_detection.FlaskTests.test_home_and_assets) ... ok
+test_service_unavailable_has_clear_message (test_emotion_detection.FlaskTests.test_service_unavailable_has_clear_message) ... ok
+test_live_anger (test_emotion_detection.WatsonLiveTests.test_live_anger) ... skipped 'Requires live Watson service; set RUN_WATSON_LIVE_TESTS=1'
+test_live_disgust (test_emotion_detection.WatsonLiveTests.test_live_disgust) ... skipped 'Requires live Watson service; set RUN_WATSON_LIVE_TESTS=1'
+test_live_fear (test_emotion_detection.WatsonLiveTests.test_live_fear) ... skipped 'Requires live Watson service; set RUN_WATSON_LIVE_TESTS=1'
+test_live_joy (test_emotion_detection.WatsonLiveTests.test_live_joy) ... skipped 'Requires live Watson service; set RUN_WATSON_LIVE_TESTS=1'
+test_live_sadness (test_emotion_detection.WatsonLiveTests.test_live_sadness) ... skipped 'Requires live Watson service; set RUN_WATSON_LIVE_TESTS=1'
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.068s
+
+OK (skipped=5)
+
+Exit code: 0

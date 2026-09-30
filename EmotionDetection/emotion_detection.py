@@ -1,0 +1,61 @@
+"""Analyze text with the IBM Skills Network Watson NLP REST service."""
+
+import logging
+import math
+import os
+
+import requests
+
+EMOTIONS = ("anger", "disgust", "fear", "joy", "sadness")
+DEFAULT_URL = (
+    "https://sn-watson-emotion.labs.skills.network/"
+    "v1/watson.runtime.nlp.v1/NlpService/EmotionPredict"
+)
+MODEL_ID = "emotion_aggregated-workflow_lang_en_stock"
+LOGGER = logging.getLogger(__name__)
+
+
+def unavailable_result():
+    """Return the assignment's six-key unavailable response."""
+    return dict.fromkeys((*EMOTIONS, "dominant_emotion"))
+
+
+def emotion_detector(text_to_analyze):
+    """Return five emotion scores and their maximum, or six None values.
+
+    HTTP 400, other unsuccessful statuses, connection failures, and malformed
+    responses return the same unavailable structure. Blank input never makes
+    a network request. Ties use the first emotion in EMOTIONS order.
+    """
+    if not isinstance(text_to_analyze, str) or not text_to_analyze.strip():
+        return unavailable_result()
+
+    try:
+        response = requests.post(
+            os.environ.get("WATSON_EMOTION_URL", DEFAULT_URL),
+            json={"raw_document": {"text": text_to_analyze}},
+            headers={"grpc-metadata-mm-model-id": MODEL_ID},
+            timeout=(5, 20),
+        )
+        if response.status_code == 400:
+            return unavailable_result()
+        if response.status_code != 200:
+            LOGGER.warning("Watson emotion service returned HTTP %s", response.status_code)
+            return unavailable_result()
+
+        emotions = response.json()["emotionPredictions"][0]["emotion"]
+        scores = {name: emotions[name] for name in EMOTIONS}
+        if any(
+            isinstance(value, bool)
+            or not isinstance(value, (int, float))
+            or not math.isfinite(value)
+            or not 0 <= value <= 1
+            for value in scores.values()
+        ):
+            return unavailable_result()
+    except (requests.RequestException, ValueError, KeyError, IndexError, TypeError):
+        # Do not log input text, headers, credentials, or arbitrary response bodies.
+        LOGGER.warning("Watson emotion service is unavailable or returned invalid data")
+        return unavailable_result()
+
+    return {**scores, "dominant_emotion": max(scores, key=scores.get)}

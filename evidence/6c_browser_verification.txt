@@ -1,0 +1,13 @@
+Browser: Microsoft Edge (Playwright, real headless browser)
+Application: http://127.0.0.1:5000
+Mocks: none
+Home page: HTTP 200; heading, form, and results visible: PASS
+Live analysis route: HTTP 503
+Emotion analysis is unavailable. The Watson service could not analyze this text. Please try again later.
+Live score display: BLOCKED by Watson service; real error displayed
+Saved 6b_deployment_test.png (actual live outcome)
+Empty and whitespace submission: PASS; no additional analysis requests
+Saved 7c_error_handling_interface.png
+Direct blank route: HTTP 400; expected validation message: PASS
+Mobile width 390px: no horizontal overflow: PASS
+Browser JavaScript errors: 0

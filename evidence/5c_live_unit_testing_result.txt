@@ -1,0 +1,78 @@
+$ python -m unittest -v test_emotion_detection.WatsonLiveTests
+test_live_anger (test_emotion_detection.WatsonLiveTests.test_live_anger) ... Watson emotion service is unavailable or returned invalid data
+FAIL
+test_live_disgust (test_emotion_detection.WatsonLiveTests.test_live_disgust) ... Watson emotion service is unavailable or returned invalid data
+FAIL
+test_live_fear (test_emotion_detection.WatsonLiveTests.test_live_fear) ... Watson emotion service is unavailable or returned invalid data
+FAIL
+test_live_joy (test_emotion_detection.WatsonLiveTests.test_live_joy) ... Watson emotion service is unavailable or returned invalid data
+FAIL
+test_live_sadness (test_emotion_detection.WatsonLiveTests.test_live_sadness) ... Watson emotion service is unavailable or returned invalid data
+FAIL
+
+======================================================================
+FAIL: test_live_anger (test_emotion_detection.WatsonLiveTests.test_live_anger)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Ashmit Majumdar\OneDrive\Desktop\ibm fork\test_emotion_detection.py", line 187, in test_live_anger
+    self.check_live_sample(1)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\Ashmit Majumdar\OneDrive\Desktop\ibm fork\test_emotion_detection.py", line 180, in check_live_sample
+    self.assertIsNotNone(result["dominant_emotion"], "Watson service unavailable")
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Watson service unavailable
+
+======================================================================
+FAIL: test_live_disgust (test_emotion_detection.WatsonLiveTests.test_live_disgust)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Ashmit Majumdar\OneDrive\Desktop\ibm fork\test_emotion_detection.py", line 190, in test_live_disgust
+    self.check_live_sample(2)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\Ashmit Majumdar\OneDrive\Desktop\ibm fork\test_emotion_detection.py", line 180, in check_live_sample
+    self.assertIsNotNone(result["dominant_emotion"], "Watson service unavailable")
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Watson service unavailable
+
+======================================================================
+FAIL: test_live_fear (test_emotion_detection.WatsonLiveTests.test_live_fear)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Ashmit Majumdar\OneDrive\Desktop\ibm fork\test_emotion_detection.py", line 196, in test_live_fear
+    self.check_live_sample(4)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\Ashmit Majumdar\OneDrive\Desktop\ibm fork\test_emotion_detection.py", line 180, in check_live_sample
+    self.assertIsNotNone(result["dominant_emotion"], "Watson service unavailable")
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Watson service unavailable
+
+======================================================================
+FAIL: test_live_joy (test_emotion_detection.WatsonLiveTests.test_live_joy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Ashmit Majumdar\OneDrive\Desktop\ibm fork\test_emotion_detection.py", line 184, in test_live_joy
+    self.check_live_sample(0)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\Ashmit Majumdar\OneDrive\Desktop\ibm fork\test_emotion_detection.py", line 180, in check_live_sample
+    self.assertIsNotNone(result["dominant_emotion"], "Watson service unavailable")
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Watson service unavailable
+
+======================================================================
+FAIL: test_live_sadness (test_emotion_detection.WatsonLiveTests.test_live_sadness)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Ashmit Majumdar\OneDrive\Desktop\ibm fork\test_emotion_detection.py", line 193, in test_live_sadness
+    self.check_live_sample(3)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\Ashmit Majumdar\OneDrive\Desktop\ibm fork\test_emotion_detection.py", line 180, in check_live_sample
+    self.assertIsNotNone(result["dominant_emotion"], "Watson service unavailable")
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Watson service unavailable
+
+----------------------------------------------------------------------
+Ran 5 tests in 50.250s
+
+FAILED (failures=5)
+
+Exit code: 1

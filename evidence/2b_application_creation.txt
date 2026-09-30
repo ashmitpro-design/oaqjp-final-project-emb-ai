@@ -1,0 +1,7 @@
+$ python -c from EmotionDetection.emotion_detection import emotion_detector; print('Application module import: PASS'); print('Live call: I am so happy I am doing this.'); print(emotion_detector('I am so happy I am doing this.'))
+Application module import: PASS
+Live call: I am so happy I am doing this.
+{'anger': None, 'disgust': None, 'fear': None, 'joy': None, 'sadness': None, 'dominant_emotion': None}
+Watson emotion service is unavailable or returned invalid data
+
+Exit code: 0
