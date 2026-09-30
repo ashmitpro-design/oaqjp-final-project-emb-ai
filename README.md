@@ -15,6 +15,10 @@ joy, sadness, and the highest-scoring `dominant_emotion`.
 - Five separate live integration tests were attempted and failed because the
   Watson service was unreachable from this machine. The direct HTTP probe
   returned `ConnectTimeout`; no successful service response was obtained.
+- Further network diagnostics resolved the course hostname to private addresses
+  `10.241.0.50` and `10.241.64.14`. A public IBM website request returned HTTP 200
+  while the course request timed out. Live grading evidence must be captured in
+  a runtime with access to that private service, such as the course lab.
 - Pylint reports **10.00/10** for `server.py`, without disabled checks or a custom
   scoring formula.
 - Real Microsoft Edge browser checks pass for the page, service-unavailable
@@ -151,6 +155,29 @@ Live samples cover joy, anger, disgust, sadness, and fear. An unreachable
 service causes an explicit failure, not a fabricated pass. To regenerate live
 command evidence, use `python tools/verify_project.py --live` and
 `python tools/probe_watson.py`.
+
+For Questions 3, 5, and 7 specifically, run `python tools/capture_live_evidence.py`
+from the course lab checkout. It records the actual working directory, exact
+module import, and genuine happy/angry calls in the required evidence files,
+with both extensionless and `.txt` names. It exits unsuccessfully if no live
+prediction is obtained; it never replaces unavailable values with mock scores.
+
+To use the requested lab directory in a fresh Skills Network session:
+
+```sh
+cd /home/project
+git clone https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai.git final_project
+cd final_project
+pwd
+python -m pip install -r requirements.txt
+python tools/capture_live_evidence.py
+python server.py
+```
+
+If `final_project` already exists, use that checkout instead of cloning over it.
+Open the port 5000 preview, submit a sentence, and capture
+`6b_deployment_test.png` only after real numerical scores appear. The local
+Windows path is recorded truthfully; it is not represented as the Linux lab path.
 
 Browser verification requires Microsoft Edge and the additional dependency:
 

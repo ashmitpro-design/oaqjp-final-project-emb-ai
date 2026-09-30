@@ -87,13 +87,18 @@ def emotion_detector(text_to_analyze):
 [evidence/2b_application_creation.txt](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/2b_application_creation.txt)
 
 ```text
-$ python -c from EmotionDetection.emotion_detection import emotion_detector; print('Application module import: PASS'); print('Live call: I am so happy I am doing this.'); print(emotion_detector('I am so happy I am doing this.'))
+$ pwd
+C:\Users\Ashmit Majumdar\OneDrive\Desktop\ibm fork
+Runtime note: this is the actual local project root, not the course's Linux lab path.
+Python interpreter: C:\Users\Ashmit Majumdar\OneDrive\Desktop\ibm fork\.venv\Scripts\python.exe
+>>> from EmotionDetection.emotion_detection import emotion_detector
+>>> print('Application module import: PASS')
 Application module import: PASS
-Live call: I am so happy I am doing this.
-{'anger': None, 'disgust': None, 'fear': None, 'joy': None, 'sadness': None, 'dominant_emotion': None}
+>>> result = emotion_detector('I am so happy I am doing this.')
 Watson emotion service is unavailable or returned invalid data
-
-Exit code: 0
+>>> print(result)
+{'anger': None, 'disgust': None, 'fear': None, 'joy': None, 'sadness': None, 'dominant_emotion': None}
+Live verification: BLOCKED: no required live prediction obtained
 ```
 
 ## Question 4: Formatted emotion detection code
@@ -169,13 +174,18 @@ def emotion_detector(text_to_analyze):
 [evidence/3b_formatted_output_test.txt](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/3b_formatted_output_test.txt)
 
 ```text
-$ python -c from EmotionDetection.emotion_detection import emotion_detector; print('Application module import: PASS'); print('Live call: I am so happy I am doing this.'); print(emotion_detector('I am so happy I am doing this.'))
+$ pwd
+C:\Users\Ashmit Majumdar\OneDrive\Desktop\ibm fork
+Runtime note: this is the actual local project root, not the course's Linux lab path.
+Python interpreter: C:\Users\Ashmit Majumdar\OneDrive\Desktop\ibm fork\.venv\Scripts\python.exe
+>>> from EmotionDetection.emotion_detection import emotion_detector
+>>> print('Application module import: PASS')
 Application module import: PASS
-Live call: I am so happy I am doing this.
-{'anger': None, 'disgust': None, 'fear': None, 'joy': None, 'sadness': None, 'dominant_emotion': None}
+>>> result = emotion_detector('I am glad this happened')
 Watson emotion service is unavailable or returned invalid data
-
-Exit code: 0
+>>> print(result)
+{'anger': None, 'disgust': None, 'fear': None, 'joy': None, 'sadness': None, 'dominant_emotion': None}
+Live verification: BLOCKED: no required live prediction obtained
 ```
 
 ## Question 6: Package __init__.py URL
@@ -189,11 +199,18 @@ https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/Emotion
 [evidence/4b_packaging_test.txt](https://github.com/ashmitpro-design/oaqjp-final-project-emb-ai/blob/main/evidence/4b_packaging_test.txt)
 
 ```text
-$ python -c from EmotionDetection import emotion_detector; import EmotionDetection.emotion_detection; print('Package and module imports: PASS'); print('Blank input:', emotion_detector(''))
-Package and module imports: PASS
-Blank input: {'anger': None, 'disgust': None, 'fear': None, 'joy': None, 'sadness': None, 'dominant_emotion': None}
-
-Exit code: 0
+$ pwd
+C:\Users\Ashmit Majumdar\OneDrive\Desktop\ibm fork
+Runtime note: this is the actual local project root, not the course's Linux lab path.
+Python interpreter: C:\Users\Ashmit Majumdar\OneDrive\Desktop\ibm fork\.venv\Scripts\python.exe
+>>> from EmotionDetection.emotion_detection import emotion_detector
+>>> print('Application module import: PASS')
+Application module import: PASS
+>>> result = emotion_detector('I am very angry and furious')
+Watson emotion service is unavailable or returned invalid data
+>>> print(result)
+{'anger': None, 'disgust': None, 'fear': None, 'joy': None, 'sadness': None, 'dominant_emotion': None}
+Live verification: BLOCKED: no required live prediction obtained
 ```
 
 ## Question 8: Complete unit test code
@@ -444,7 +461,7 @@ test_live_joy (test_emotion_detection.WatsonLiveTests.test_live_joy) ... skipped
 test_live_sadness (test_emotion_detection.WatsonLiveTests.test_live_sadness) ... skipped 'Requires live Watson service; set RUN_WATSON_LIVE_TESTS=1'
 
 ----------------------------------------------------------------------
-Ran 21 tests in 0.086s
+Ran 21 tests in 0.105s
 
 OK (skipped=5)
 
@@ -460,19 +477,19 @@ Exit code: 0
 
 from flask import Flask, Response, render_template, request
 
-from EmotionDetection import emotion_detector
+from EmotionDetection.emotion_detection import emotion_detector
 
 app = Flask(__name__)
 INVALID_TEXT = "Invalid input! Try again."
 
 
-@app.get("/")
+@app.route("/", methods=["GET"])
 def index():
     """Render the accessible text-analysis interface."""
     return render_template("index.html")
 
 
-@app.get("/emotionDetector")
+@app.route("/emotionDetector", methods=["GET"])
 def detect_emotion():
     """Validate input and return the assignment's readable emotion summary."""
     text_to_analyze = request.args.get("textToAnalyze", "")
@@ -497,7 +514,7 @@ def detect_emotion():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=False)
+    app.run(host="0.0.0.0", port=5000)
 ```
 
 ## Question 11: Deployment screenshot
@@ -585,19 +602,19 @@ def emotion_detector(text_to_analyze):
 
 from flask import Flask, Response, render_template, request
 
-from EmotionDetection import emotion_detector
+from EmotionDetection.emotion_detection import emotion_detector
 
 app = Flask(__name__)
 INVALID_TEXT = "Invalid input! Try again."
 
 
-@app.get("/")
+@app.route("/", methods=["GET"])
 def index():
     """Render the accessible text-analysis interface."""
     return render_template("index.html")
 
 
-@app.get("/emotionDetector")
+@app.route("/emotionDetector", methods=["GET"])
 def detect_emotion():
     """Validate input and return the assignment's readable emotion summary."""
     text_to_analyze = request.args.get("textToAnalyze", "")
@@ -622,7 +639,7 @@ def detect_emotion():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=False)
+    app.run(host="0.0.0.0", port=5000)
 ```
 
 ## Question 14: Blank-input screenshot
@@ -640,19 +657,19 @@ if __name__ == "__main__":
 
 from flask import Flask, Response, render_template, request
 
-from EmotionDetection import emotion_detector
+from EmotionDetection.emotion_detection import emotion_detector
 
 app = Flask(__name__)
 INVALID_TEXT = "Invalid input! Try again."
 
 
-@app.get("/")
+@app.route("/", methods=["GET"])
 def index():
     """Render the accessible text-analysis interface."""
     return render_template("index.html")
 
 
-@app.get("/emotionDetector")
+@app.route("/emotionDetector", methods=["GET"])
 def detect_emotion():
     """Validate input and return the assignment's readable emotion summary."""
     text_to_analyze = request.args.get("textToAnalyze", "")
@@ -677,7 +694,7 @@ def detect_emotion():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=False)
+    app.run(host="0.0.0.0", port=5000)
 ```
 
 ## Question 16: Actual Pylint command and result

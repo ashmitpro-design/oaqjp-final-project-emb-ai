@@ -1,0 +1,5 @@
+$ python -c "from EmotionDetection import emotion_detector; import EmotionDetection.emotion_detection; print('Package and module imports: PASS'); print('Blank input:', emotion_detector(''))"
+Package and module imports: PASS
+Blank input: {'anger': None, 'disgust': None, 'fear': None, 'joy': None, 'sadness': None, 'dominant_emotion': None}
+
+Exit code: 0

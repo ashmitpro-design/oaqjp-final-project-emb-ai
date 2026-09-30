@@ -1,0 +1,9 @@
+Runtime: Windows / Python 3.13.15
+Actual project root: C:\Users\Ashmit Majumdar\OneDrive\Desktop\ibm fork
+Course URL: https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict
+Model header: grpc-metadata-mm-model-id: emotion_aggregated-workflow_lang_en_stock
+Payload: {"raw_document": {"text": "I am glad this happened"}}
+Endpoint override configured: False
+DNS resolution: 10.241.0.50, 10.241.64.14
+Public internet control: HTTP 200
+Course EmotionPredict: ConnectTimeout; no successful response

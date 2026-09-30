@@ -34,7 +34,7 @@ test_live_joy (test_emotion_detection.WatsonLiveTests.test_live_joy) ... skipped
 test_live_sadness (test_emotion_detection.WatsonLiveTests.test_live_sadness) ... skipped 'Requires live Watson service; set RUN_WATSON_LIVE_TESTS=1'
 
 ----------------------------------------------------------------------
-Ran 21 tests in 0.086s
+Ran 21 tests in 0.105s
 
 OK (skipped=5)
 

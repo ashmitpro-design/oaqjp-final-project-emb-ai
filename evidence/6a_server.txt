@@ -1,22 +1,20 @@
-Source: server.py
-
 """Serve the Emotion Detector interface and the course's analysis route."""
 
 from flask import Flask, Response, render_template, request
 
-from EmotionDetection import emotion_detector
+from EmotionDetection.emotion_detection import emotion_detector
 
 app = Flask(__name__)
 INVALID_TEXT = "Invalid input! Try again."
 
 
-@app.get("/")
+@app.route("/", methods=["GET"])
 def index():
     """Render the accessible text-analysis interface."""
     return render_template("index.html")
 
 
-@app.get("/emotionDetector")
+@app.route("/emotionDetector", methods=["GET"])
 def detect_emotion():
     """Validate input and return the assignment's readable emotion summary."""
     text_to_analyze = request.args.get("textToAnalyze", "")
@@ -41,4 +39,4 @@ def detect_emotion():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=False)
+    app.run(host="0.0.0.0", port=5000)

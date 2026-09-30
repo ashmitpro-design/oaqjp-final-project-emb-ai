@@ -52,7 +52,7 @@ def main():
                 lines.extend(["This is real Flask deployment evidence; live emotion inference remains blocked.", ""])
         else:
             content = (ROOT / path).read_text(encoding="utf-8")
-            if kind == "python":
+            if kind == "python" and content.startswith("Source:"):
                 content = content.split("\n\n", 1)[1]
             lines.extend([f"```{kind}", content.rstrip(), "```", ""])
     lines.extend([
